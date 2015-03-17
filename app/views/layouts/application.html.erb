@@ -10,5 +10,21 @@
 
 <%= yield %>
 
+<% if signed_in? %>
+  <%= button_to "Sign Out", session_url, method: :delete%>
+<% end %>
+
+<% if flash[:errors] %>
+<% flash[:errors].each do |error|%>
+  <%= error %>
+<%  end %>
+<% end %>
+
+<% if flash.now[:errors]  %>
+<% flash.now[:errors].each do |error|%>
+  <%= error %>
+<%  end %>
+<% end %>
+
 </body>
 </html>

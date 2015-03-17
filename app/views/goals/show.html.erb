@@ -1,0 +1,7 @@
+<h1><%= @goal.content %> </h1>
+<p>Find me in app/views/goals/show.html.erb</p>
+
+<%= link_to "Edit Goal", goal_url(@goal), method: :patch%>
+Edit Goal <br>
+
+<%= link_to "Delete Goal", goal_url(@goal), method: :delete%> Delete Goal

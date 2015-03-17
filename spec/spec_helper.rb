@@ -16,7 +16,16 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'capybara/rspec'
+require 'factory_girl'
+require_relative './support/auth_features_helper'
+require_relative './support/goal_features_helper'
+
+# Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+
 RSpec.configure do |config|
+  config.include AuthFeaturesHelper, type: :feature
+  config.include GoalFeaturesHelper, type: :feature
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -85,7 +94,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
-  RSpec.configure do |config|
-    config.include FactoryGirl::Syntax::Methods
-  end
+  # RSpec.configure do |config|
+  #   config.include FactoryGirl::Syntax::Methods
+  # end
 end

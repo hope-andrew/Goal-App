@@ -80,8 +80,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: GoalApp_production
-  username: GoalApp
-  password: <%= ENV['GOALAPP_DATABASE_PASSWORD'] %>
